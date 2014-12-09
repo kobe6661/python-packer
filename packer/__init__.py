@@ -1,11 +1,5 @@
 '''
-Python bindings for working with Vagrant and Vagrantfiles. Do useful things
-with the `vagrant` CLI without the boilerplate (and errors) of calling
-`vagrant` and parsing the results.
-The API attempts to conform closely to the API of the `vagrant` command line,
-including method names and parameter names.
-Documentation of usage, testing, installation, etc., can be found at
-https://github.com/todddeluca/python-vagrant.
+Python bindings for working with Packer virtual machine image builder.
 '''
 
 import collections
@@ -88,7 +82,7 @@ def which(program):
         # if the program ends with one of the extensions, only test that one.
         # otherwise test all the extensions.
         matching_exts = [ext for ext in exts if
-        program.lower().endswith(ext.lower())]
+                         program.lower().endswith(ext.lower())]
         if matching_exts:
             files = [program + ext for ext in matching_exts]
         else:
@@ -107,3 +101,4 @@ def which(program):
 # The full path to the vagrant executable, e.g. '/usr/bin/vagrant'
 def get_packer_executable():
     return which('packer')
+    
